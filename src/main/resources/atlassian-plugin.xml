@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<atlassian-plugin key="com.alextergroup.teamLeadPlugin.testPlugin" name="Test plugin" plugins-version="2">
+    <plugin-info>
+        <description>This is the test plugin.</description>
+        <version>1.0.0</version>
+        <vendor name="Alextergroup" url="alexplotbox@gmail.com"/>
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="testPlugin"/>
+    <!-- add our web resources -->
+    <web-resource key="testPlugin-resources" name="testPlugin Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <resource type="download" name="testPlugin.css" location="/css/testPlugin.css"/>
+        <resource type="download" name="testPlugin.js" location="/js/testPlugin.js"/>
+        <resource type="download" name="images/" location="/images"/>
+        <context>testPlugin</context>
+    </web-resource>
+    <webwork1 key="laboratory-web-work-module" name="laboratoryWebWorkModule" i18n-name-key="laboratory-web-work-module.name">
+        <description key="laboratory-web-work-module.description">The laboratoryWebWorkModule Plugin</description>
+        <actions>
+            <action name="com.alextergroup.teamLeadPlugin.webwork.laboratoryAction" alias="laboratory">
+                <view name="success">/templates/laboratory-web-work-module/success.vm</view>
+                <view name="input">/templates/laboratory-web-work-module/input.vm</view>
+                <view name="error">/templates/laboratory-web-work-module/error.vm</view>
+            </action>
+        </actions>
+    </webwork1>
+    <web-item name="laboratoryWebItem" i18n-name-key="laboratory-web-item.name" key="laboratory-web-item" section="system.top.navigation.bar" weight="1000">
+        <description key="laboratory-web-item.description">The laboratoryWebItem Plugin</description>
+        <label key="laboratory-web-item.label"/>
+        <link linkId="laboratory-web-item-link">/secure/laboratory.jspa</link>
+    </web-item>
+    <rest name="Book Resource" i18n-name-key="book-resource.name" key="book-resource" path="/bookresource" version="1.0">
+        <description key="book-resource.description">The Book Resource Plugin</description>
+    </rest>
+</atlassian-plugin>
