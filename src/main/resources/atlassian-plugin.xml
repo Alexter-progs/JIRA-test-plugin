@@ -32,7 +32,12 @@
         <label key="laboratory-web-item.label"/>
         <link linkId="laboratory-web-item-link">/secure/laboratory.jspa</link>
     </web-item>
-    <rest name="Book Resource" i18n-name-key="book-resource.name" key="book-resource" path="/bookresource" version="1.0">
+    <rest name="Book Resource" i18n-name-key="book-resource.name" key="book-resource" path="/productresource" version="1.0">
         <description key="book-resource.description">The Book Resource Plugin</description>
     </rest>
+    <component-import key="ao" name="Active Objects service" interface="com.atlassian.activeobjects.external.ActiveObjects"></component-import>
+    <ao key="ao-module" namespace="edibleproduct">
+        <entity>com.alextergroup.teamLeadPlugin.entity.ProductEntity</entity>
+    </ao>
+    <component key="dao-factory" class="com.alextergroup.teamLeadPlugin.DAO.DAOFactory"></component>
 </atlassian-plugin>
