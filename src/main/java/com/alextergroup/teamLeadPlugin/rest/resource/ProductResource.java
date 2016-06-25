@@ -40,7 +40,6 @@ public class ProductResource {
             for (ProductEntity product : DAOFactory.getInstance().getProductDAO().getProducts()) {
                 products.add(Mapper.toProductModel(product));
             }
-
         } catch (Exception e){
             log.error("Can't get products list", e);
         }
@@ -64,7 +63,7 @@ public class ProductResource {
 
         String productName = json.getString("productName");
         String manufacturer = json.getString("manufacturer");
-        String manufactureDateVal = json.getString("manufacture");
+        String manufactureDateVal = json.getString("manufactureDate");
         String expirationDateVal = json.getString("expirationDate");
         String description = json.getString("description");
 
