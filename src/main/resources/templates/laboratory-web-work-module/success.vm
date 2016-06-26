@@ -1,1 +1,37 @@
-<a href="localhost:8080/rest/bookresource/1.0/message">Rest API</a>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    $webResourceManager.requireResourcesForContext("testPlugin")
+    <title>Laboratory page</title>
+</head>
+
+<body>
+    <div class="aui-tabs vertical-tabs">
+        <ul class="tabs-menu">
+            <li class="menu-item active-tab">
+                <a href="#tabs-A"><strong>Tab A</strong></a>
+            </li>
+            <li class="menu-item">
+                <a href="#tabs-B"><strong>Tab B</strong></a>
+            </li>
+            <li class="menu-item">
+                <a href="#tabs-C"><strong>Tab C</strong></a>
+            </li>
+        </ul>
+        <div class="tabs-pane active-pane" id="tabs-A">
+            <h2>This is Tab A</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div class="tabs-pane" id="tabs-B">
+            <h1 id="h2-element">Products</h1>
+                <table id="project-config-products-table">
+                </table>
+        </div>
+        <div class="tabs-pane" id="tabs-C">
+            <h2>This is Tab C</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+</body>
+</html>

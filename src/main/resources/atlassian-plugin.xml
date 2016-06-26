@@ -12,8 +12,24 @@
     <!-- add our web resources -->
     <web-resource key="testPlugin-resources" name="testPlugin Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <dependency>com.atlassian.auiplugin:aui-experimental-restfultable</dependency>
+        <dependency>com.atlassian.jira.jira-project-config-plugin:project-config.global</dependency>
+        <dependency>com.atlassian.auiplugin:aui-experimental-soy-templates</dependency>
+        <dependency>com.atlassian.auiplugin:aui-date-picker</dependency>
+
+        <transformation extension="js">
+            <transformer key="jsI18n"/>
+        </transformation>
+        <transformation extension="soy">
+            <transformer key="jiraSoyTransformer"/>
+        </transformation>
+
+        <resource type="download" name="product-soy.js" location="/templates/laboratory-web-work-module/product.soy"/>
+        <resource type="download" name="ProductRow.js" location="/js/ProductRow.js"/>
+        <resource type="download" name="EditProductRow.js" location="/js/EditProductRow.js"/>
+        <resource type="download" name="product-init.js" location="/js/product-init.js"/>
+        <resource type="download" name="DatePicker.js" location="/js/DatePicker.js"/>
         <resource type="download" name="testPlugin.css" location="/css/testPlugin.css"/>
-        <resource type="download" name="testPlugin.js" location="/js/testPlugin.js"/>
         <resource type="download" name="images/" location="/images"/>
         <context>testPlugin</context>
     </web-resource>

@@ -1,0 +1,53 @@
+{namespace JIRA.Templates.Product}
+
+/**
+* @param product
+*/
+{template .productRow}
+<td class="project-config-product-productName">
+    {$product.productName}
+</td>
+<td class="project-config-product-manufacturer">
+    {$product.manufacturer}
+</td>
+<td class="project-config-product-manufactureDate">
+    {$product.manufactureDate}
+</td>
+<td class="project-config-product-expirationDate">
+    {$product.expirationDate}
+</td>
+<td class="project-config-product-description">
+    {$product.description}
+</td>
+<td class="jira-restfultable-operations">
+    <ul class="first ops">
+        <li class="last">
+            <a class="project-config-product-delete button first last" href="#">Delete</a>
+        </li>
+    </ul>
+</td>
+{/template}
+
+/**
+* @param product
+*/
+{template .editProductRow}
+<td class="project-config-product-productName">
+    <input name="productName" id="project-config-product-productName-input" type="text" class="text" value="{$product.productName ? $product.productName : ''}"/>
+</td>
+<td class="project-config-product-manufacturer">
+    <input name="productName" id="project-config-product-manufacturer-input" type="text" class="text" value="{$product.manufacturer ? $product.manufacturer : ''}"/>
+</td>
+<td class="project-config-product-manufactureDate">
+    <input name="productName" id="project-config-product-manufactureDate-input" type="date" class="aui-date-picker " value="{$product.manufactureDate ? $product.manufactureDate : ''}"/>
+</td>
+<td class="project-config-product-expirationDate">
+    <input name="productName" id="project-config-product-expirationDate-input" type="date" class="aui-date-picker" value="{$product.expirationDate ? $product.expirationDate : ''}"/>
+</td>
+<td class="project-config-product-description">
+    <input name="productName" id="project-config-product-description-input" type="text" class="text" value="{$product.description ? $product.description : ''}"/>
+</td>
+<td class="project-config-product-name">
+    <button class="aui-button aui-button-primary">Submit</button>
+</td>
+{/template}
