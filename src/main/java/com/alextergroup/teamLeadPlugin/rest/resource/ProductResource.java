@@ -29,8 +29,7 @@ public class ProductResource {
 
     private static final Logger log = LoggerFactory.getLogger(ProductResource.class);
 
-    private static final SimpleDateFormat dateFmt = new SimpleDateFormat("dd.MM.yy");
-    private static final SimpleDateFormat dateTimeFmt = new SimpleDateFormat("dd.MM.yy HH:mm");
+    private static final SimpleDateFormat dateFmt = new SimpleDateFormat("dd.mm.yyyy");
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
@@ -67,11 +66,15 @@ public class ProductResource {
         String expirationDateVal = json.getString("expirationDate");
         String description = json.getString("description");
 
+        log.error(manufactureDateVal);
+        log.error(expirationDateVal);
+
         Date manufactureDate = parseDate(manufactureDateVal);
         Date expirationDate = parseDate(expirationDateVal);
 
         Product product = new ProductImpl(productName, expirationDate, manufactureDate, manufacturer, description);
         ProductEntity entity = DAOFactory.getInstance().getProductDAO().addProduct(product);
+
 
         return Response.ok(Mapper.toProductModel(entity)).cacheControl(CacheControl.NO_CACHE).build();
     }
@@ -117,12 +120,8 @@ public class ProductResource {
             try {
                 date = dateFmt.parse(dateVal);
             } catch (Exception e) {
-                try {
-                    date = dateTimeFmt.parse(dateVal);
-                } catch (Exception e1) {
-                    date = null;
-                    log.error("Can't parse date", e, e1);
-                }
+                date = null;
+                log.error("Can't parse date", e);
             }
         }
         return date;

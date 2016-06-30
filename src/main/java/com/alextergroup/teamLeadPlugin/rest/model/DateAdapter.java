@@ -6,20 +6,19 @@ import java.util.Date;
 
 public class DateAdapter  extends XmlAdapter<String, Date>{
 
-    private static final SimpleDateFormat dateTimeFmt = new SimpleDateFormat("dd.MM.yy HH:mm");
-
+    private static final SimpleDateFormat dateFmt = new SimpleDateFormat("dd.mm.yyyy");
 
     @Override
     public Date unmarshal(String v) throws Exception {
-        synchronized (dateTimeFmt){
-            return dateTimeFmt.parse(v);
+        synchronized (dateFmt){
+            return dateFmt.parse(v);
         }
     }
 
     @Override
     public String marshal(Date v) throws Exception {
-        synchronized (dateTimeFmt){
-            return dateTimeFmt.format(v);
+        synchronized (dateFmt){
+            return dateFmt.format(v);
         }
     }
 }

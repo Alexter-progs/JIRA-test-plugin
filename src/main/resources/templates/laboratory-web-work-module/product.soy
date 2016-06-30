@@ -32,20 +32,21 @@
 * @param product
 */
 {template .editProductRow}
+
 <td class="project-config-product-productName">
     <input name="productName" id="project-config-product-productName-input" type="text" class="text" value="{$product.productName ? $product.productName : ''}"/>
 </td>
 <td class="project-config-product-manufacturer">
-    <input name="productName" id="project-config-product-manufacturer-input" type="text" class="text" value="{$product.manufacturer ? $product.manufacturer : ''}"/>
+    <input name="manufacturer" id="project-config-product-manufacturer-input" type="text" class="text" placeholder=" " value="{$product.manufacturer ? $product.manufacturer : ''}"/>
 </td>
 <td class="project-config-product-manufactureDate">
-    <input name="productName" id="project-config-product-manufactureDate-input" type="date" class="aui-date-picker " max="2016-01-01" min="2030-01-01" value="{$product.manufactureDate ? $product.manufactureDate : ''}"/>
+    <input name="manufactureDate" id="manufactureDateInput" type="text" class="text" value="{$product.manufactureDate ? $product.manufactureDate : ''}"/>
 </td>
 <td class="project-config-product-expirationDate">
-    <input name="productName" id="project-config-product-expirationDate-input" type="date" class="aui-date-picker" max="2016-01-01" min="2030-01-01" value="{$product.expirationDate ? $product.expirationDate : ''}"/>
+    <input name="expirationDate" id="expirationDateInput" type="text" class="text" value="{$product.expirationDate ? $product.expirationDate : ''}"/>
 </td>
 <td class="project-config-product-description">
-    <input name="productName" id="project-config-product-description-input" type="text" class="text" value="{$product.description ? $product.description : ''}"/>
+    <input name="description" id="project-config-product-description-input" type="text" class="text" value="{$product.description ? $product.description : ''}"/>
 </td>
 <td class="project-config-product-name">
     <button class="aui-button aui-button-primary">Submit</button>

@@ -3,6 +3,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     $webResourceManager.requireResourcesForContext("testPlugin")
+    $webResourceManager.requireResource("jira.webresources:calendar");
+    $webResourceManager.requireResource("jira.webresources:calendar-en");
     <title>Laboratory page</title>
 </head>
 
@@ -24,7 +26,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
         <div class="tabs-pane" id="tabs-B">
-            <h1 id="h2-element">Products</h1>
+            <h1>Products</h1>
                 <table id="project-config-products-table">
                 </table>
         </div>

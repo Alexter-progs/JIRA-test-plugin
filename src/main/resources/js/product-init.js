@@ -1,30 +1,33 @@
-jQuery(function(){
-    var $table = AJS.$("#project-config-products-table");
+AJS.toInit(function() {
+  
+    var $table = AJS.$("#project-config-products-table");    
     
-    function getResourceURL(){
+    function getResourceURL() {
         return contextPath + "/rest/productresource/1.0/products";
     }
-    
+
     function getProduct(callback) {
         JIRA.SmartAjax.makeRequest({
             url: getResourceURL(),
             complete: function (xhr, status, response) {
-                if (response.successful){
+                if (response.successful) {
                     callback(response.data.products);
                 } else {
                     $table.trigger("serverError",
-                                [JIRA.SmartAjax.buildSimpleErrorContent(response)]);
-                }                
+                        [JIRA.SmartAjax.buildSimpleErrorContent(response)]);
+                }
             }
         });
     }
-    
-    getProduct(function(products) {
+
+    getProduct(function (products) {
+
         window.ttt = products;
         JIRA.Admin.ProductTable = new AJS.RestfulTable({
             el: $table,
             loadingMsg: "Loading table...",
             allowCreate: true,
+            allowEdit: true,
             url: getResourceURL(),
             editable: true,
             resources: {
@@ -58,7 +61,7 @@ jQuery(function(){
                 row: JIRA.Admin.Product.ProductRow
             }
         });
-        for (var i = 0; i < products.length; i++){
+        for (var i = 0; i < products.length; i++) {
             JIRA.Admin.ProductTable.addRow(products[i]);
         }
         JIRA.userhover($table);
