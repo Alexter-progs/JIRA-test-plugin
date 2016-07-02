@@ -1,0 +1,11 @@
+<emailService id="csv8">
+    <description>Sends e-mail message with csv file containing tasks with selected type and at a given cron time</description>
+    <properties>
+        <property>
+            <key>EMAIL</key>
+            <name>Email</name>
+            <description>Email to send issues to</description>
+            <type>string</type>
+        </property>
+    </properties>
+</emailService>

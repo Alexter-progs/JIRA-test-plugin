@@ -1,3 +1,6 @@
 This is a test task for teamlead.ru
 1. WebWork module laboratory
 2. RESTful table
+3. Simple service that exports some parameters from all "In progress" issues into CSV file and send it to the assigned email.
+
+If you don't know how to add service in JIRA go to: https://confluence.atlassian.com/adminjiraserver071/services-802592250.html
