@@ -3,5 +3,7 @@ This is a test task for teamlead.ru
 2. RESTful table
 3. Simple service that exports some parameters from all "In progress" issues into CSV file and send it to the assigned email.
 
+Use "com.alextergroup.teamLeadPlugin.scheduledTasks.EmailTasksService" as a Class parameter when adding service.
+
 In order to use service you have to add it in JIRA service tab (https://confluence.atlassian.com/adminjiraserver071/services-802592250.html) and
 have working SMTP server on outgoing email tab (https://confluence.atlassian.com/adminjiraserver071/configuring-jira-s-smtp-mail-server-to-send-notifications-802592930.html)
